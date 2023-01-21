@@ -17,7 +17,9 @@ You can find the `.R` file that generates the `.Rd` by reading the comment in th
 
 ## Bigger changes
 
-If you want to make a bigger change, it's a good idea to first file an issue and make sure someone from the team agrees that it's needed. We are open to ideas and recommendations of new computational tools that help in video game completionist tasks. If you've found a bug, please file an issue that illustrates the bug with a minimal [reprex](https://www.tidyverse.org/help/#reprex) (this will also help you write a unit test, if needed).
+If you want to make a bigger change, it's a good idea to first file an issue and make sure someone from the team agrees that it's needed.
+We are open to ideas and recommendations of new computational tools that help in video game completionist tasks.
+If you've found a bug, please file an issue that illustrates the bug with a minimal [reprex](https://www.tidyverse.org/help/#reprex) (this will also help you write a unit test, if needed).
 
 ### Pull request process
 
@@ -54,4 +56,4 @@ By contributing to this project you agree to abide by its terms.
 
 ## Attribution
 
-
+These contribution guidelines were adapted from the [tidyverse contributing guidelines](https://www.tidyverse.org/contribute/).
