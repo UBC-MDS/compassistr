@@ -51,11 +51,7 @@ The following functions are currently available:
     obtaining a drop over a range of trial counts, indicating location
     of provided trials on this curve.
 
--   `pts_calc()`: Computes the expected attempts/ play time to cross a
-    certain point threshold (i.e. price of an item, expected number of
-    points per item drop) as a function of a player’s points per attempt
-    and time per attempt. When passed multiple sets of points/ times, it
-    ranks and plots them to allow for comparison of methods.
+-   `pts_calc()`: Computes the expected play time to obtain a target point level (i.e. price of an item, expected number of points per item drop) as a function of a player's points per attempt and time per attempt. When passed multiple sets of points/ times, it ranks all of the possible strategies and provides a list of time required (in ranked order least to maximum).
 
 There are some tools that perform similar functions to functions in
 `compassist`. For example, the `giovanni` package
