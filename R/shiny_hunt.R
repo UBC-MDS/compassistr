@@ -89,22 +89,22 @@ shiny_hunt <- function(gen, masuda = FALSE, shiny_charm = FALSE, encounter_rate 
   }
 
   expected_values <- c(0.25, 0.5, 0.75, 0.9, 0.99)
-  results <- tibble(perc_chance = expected_values * 100)
+  results <- tibble::tibble(perc_chance = expected_values * 100)
 
   # calculate number of attempts required
-  results <- results |> mutate(attempts = ceiling(log(1 - perc_chance/100)/log(1 - prob)))
+  results <- results |> dplyr::mutate(attempts = ceiling(log(1 - perc_chance/100)/log(1 - prob)))
 
   if (masuda) {
     if (hatch_time) {
-      results <- results |> mutate(hours = round(attempts * hatch_time / 3600, 2))
+      results <- results |> dplyr::mutate(hours = round(attempts * hatch_time / 3600, 2))
     }
   } else if (encounter_rate < 100) {
     encounter_attempts <- log(0.1) / log(1 - (encounter_rate / 100))
-    results <- results |> mutate(attempts = ceiling(attempts * encounter_attempts),
+    results <- results |> dplyr::mutate(attempts = ceiling(attempts * encounter_attempts),
                                  hours = round(attempts * attempt_time / 3600, 2))
   } else {
-    results <- results |> mutate(hours = round(attempts * attempt_time / 3600, 2))
+    results <- results |> dplyr::mutate(hours = round(attempts * attempt_time / 3600, 2))
   }
-  results <- results |> mutate(perc_chance = paste0(as.character(perc_chance), '%'))
+  results <- results |> dplyr::mutate(perc_chance = paste0(as.character(perc_chance), '%'))
   results
 }

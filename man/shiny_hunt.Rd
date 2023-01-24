@@ -9,9 +9,8 @@ shiny_hunt(
   masuda = FALSE,
   shiny_charm = FALSE,
   encounter_rate = 100,
-  atempt_time = 15,
-  hatch_time = NULL,
-  verbose = FALSE
+  attempt_time = 15,
+  hatch_time = 0
 )
 }
 \arguments{
@@ -23,9 +22,9 @@ shiny_hunt(
 
 \item{encounter_rate}{Rate of encounter of the pokemon (only for wild encounters)}
 
-\item{atempt_time}{Time (in seconds) representing average time taken to encounter a pokemon, or soft reset}
-
 \item{hatch_time}{Time (in seconds) to hatch a single pokemon egg}
+
+\item{atempt_time}{Time (in seconds) representing average time taken to encounter a pokemon, or soft reset}
 
 \item{verbose}{Controls format of returned probability. Default (True) prints results as statements, False returns a dict.}
 }
