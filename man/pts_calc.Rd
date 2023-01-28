@@ -2,13 +2,22 @@
 % Please edit documentation in R/pts_calc.R
 \name{pts_calc}
 \alias{pts_calc}
-\title{Title}
+\title{Calculates and returns the list of time required (in ranked order) to achieve target points using the different options provided in input}
 \usage{
-pts_calc(points_attempts, time_attempt)
+pts_calc(points_attempt, time_attempt, target_points, verbose = TRUE)
 }
 \arguments{
-\item{time_attempt}{}
+\item{points_attempt}{list of number of points obtained in each attempt}
+
+\item{time_attempt}{list of time taken (in minutes) for each attempt}
+
+\item{target_points}{number of points targetted to reach}
+
+\item{verbose}{bool Controls format of returned time taken. Default (True) prints results as statements, False returns a list.}
+}
+\value{
+list of time required (in ranked order of minutes) to achieve target points using the different options provided in input
 }
 \description{
-Title
+Calculates and returns the list of time required (in ranked order) to achieve target points using the different options provided in input
 }

@@ -2,12 +2,12 @@
 % Please edit documentation in R/boss_completion.R
 \name{boss_completion}
 \alias{boss_completion}
-\title{Title}
+\title{Boss Completion}
 \usage{
 boss_completion(rates, base_rate = NULL, attempts = NULL, verbose = TRUE)
 }
 \arguments{
-\item{rates}{A list of probabilities as floats between 1 and 0. When base_rate is defined must sum to 1}
+\item{rates}{A numeric vector of probabilities as floats between 1 and 0. When base_rate is defined must sum to 1}
 
 \item{base_rate}{A probability between 1 and 0. In the case where there is a fixed rate of receiving an item table roll}
 
@@ -15,6 +15,12 @@ boss_completion(rates, base_rate = NULL, attempts = NULL, verbose = TRUE)
 
 \item{verbose}{Enables printed output}
 }
+\value{
+Returns a numeric vector.
+First element should always converge to 1.0.
+Second element is the expected attempts for the given parameters.
+Third element is passed only when attempts in not NULL. It is the \%prob of completion for given attempts
+}
 \description{
-Title
+Boss Completion
 }
