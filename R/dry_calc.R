@@ -1,20 +1,19 @@
 #' @title dry_calc
 #' @description Calculates probability of at least one occurrence of an event given the number of attempts.
 #'
-#' @param p Probability of event occurrence.
-#' @param n The number of attempts.
-#' @param verbose Controls format of returned probability. Default (TRUE) returns result as a chr statement; FALSE returns result as a numeric.
-#' @param plot Controls return of plot showing where the resulting probability lies on the binomial distribution. Default (TRUE) shows the plot.
+#' @param p Numeric probability of event occurrence.
+#' @param n Integer indicating the number of attempts.
+#' @param verbose Controls format of returned probability; Default (TRUE) prints result as a chr statement; FALSE returns result as a numeric decimal.
+#' @param plot Controls printing of plot showing where the resulting probability lies on the binomial distribution; Default (TRUE) shows the plot.
 #'
-#' @return A number, the probability of at least one occurrence of event given the number of trials as a decimal (if verbose set to FALSE).
+#' @return A number, the probability of at least one occurrence of the event given the number of trials is returned as a decimal (if verbose set to FALSE).
 #' @export
 #'
 #' @examples
 #' # return numeric probability and show plot
-#' dry_calc(0.2, 5, verbose = FALSE, plot = TRUE)
+#' dry_calc(0.2, 5L, verbose = FALSE, plot = TRUE)
 #' # return probability in a chr statement and don't show plot
-#' dry_calc(0.2, 5, verbose = TRUE, plot = FALSE)
-#'
+#' dry_calc(0.5, 3L, verbose = TRUE, plot = FALSE)
 dry_calc <- function(p, n, verbose = TRUE, plot = TRUE) {
   # check probability input is a number between 0 and 1
   if (!is.numeric(p) | !(0 <= p & p <= 1)) {
