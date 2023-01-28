@@ -2,19 +2,29 @@
 % Please edit documentation in R/dry_calc.R
 \name{dry_calc}
 \alias{dry_calc}
-\title{Title}
+\title{dry_calc}
 \usage{
 dry_calc(p, n, verbose = TRUE, plot = TRUE)
 }
 \arguments{
-\item{p}{Probability of event occurence.}
+\item{p}{Probability of event occurrence.}
 
 \item{n}{The number of attempts.}
 
-\item{verbose}{Controls format of returned probability. Default (True) returns result as a statement, False returns a float.}
+\item{verbose}{Controls format of returned probability. Default (TRUE) returns result as a chr statement; FALSE returns result as a numeric.}
 
-\item{plot}{Controls return of plot showing where the resulting probability lies on the binomial distribution. Default is True.}
+\item{plot}{Controls return of plot showing where the resulting probability lies on the binomial distribution. Default (TRUE) shows the plot.}
+}
+\value{
+A number, the probability of at least one occurrence of event given the number of trials as a decimal (if verbose set to FALSE).
 }
 \description{
-Title
+Calculates probability of at least one occurrence of an event given the number of attempts.
+}
+\examples{
+# return numeric probability and show plot
+dry_calc(0.2, 5, verbose = FALSE, plot = TRUE)
+# return probability in a chr statement and don't show plot
+dry_calc(0.2, 5, verbose = TRUE, plot = FALSE)
+
 }
