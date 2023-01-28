@@ -12,6 +12,33 @@
 #' @export
 #'
 #' @examples
+
+
 boss_completion <- function(rates, base_rate = NULL, attempts = NULL, verbose = TRUE){
-  NULL
+  if round(sum(rates),3) 
+
+
 }
+
+library(testthat)
+
+# Test base functionality
+expect_equal(boss_completion(rates = c(7 / 24, 7 / 24, 3 / 24, 2 / 24, 2 / 24, 2 / 24, 1 / 24), base_rate = 1/20, attempts = 673, verbose = False), c(1,673,63.24))
+
+# Test if still works when not returning a probability
+expect_equal(boss_completion(rates = c(7 / 24, 7 / 24, 3 / 24, 2 / 24, 2 / 24, 2 / 24, 1 / 24), base_rate = 1/20, verbose = False), c(1,673))
+
+# Expected behavior for no base rate (this is number of drops required in initial problem, not number of attempts)
+expect_equal(boss_completion(rates = c(7 / 24, 7 / 24, 3 / 24, 2 / 24, 2 / 24, 2 / 24, 1 / 24)), c(1,33))
+
+# Test where rates do not converge for base rate case
+expect_equal(boss_completion(rates  = c(1,1,1), bate_rate = 1/2), NULL)
+
+# Test 0 probability for less attempts than items desired
+expect_equal(boss_completion(rates=c(1 / 5, 1 / 5, 1 / 5, 1 / 5, 1 / 5), attempts=3, verbose=False)[3],0)
+
+# Test for a rate > 1
+expect_equal(boss_completion(rates=c(2, 1 / 5, 1 / 5, 1 / 5, 1 / 5), attempts=3, verbose=False), NULL)
+
+# Test for a rate < 0
+expect_equal(boss_completion(rates=c(-1 / 5, 1 / 5, 1 / 5, 1 / 5, 1 / 5), attempts=3, verbose=False), NULL)
