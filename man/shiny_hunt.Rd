@@ -9,29 +9,32 @@ shiny_hunt(
   masuda = FALSE,
   shiny_charm = FALSE,
   encounter_rate = 100,
-  atempt_time = 15,
-  hatch_time = NULL,
-  verbose = FALSE
+  attempt_time = 15,
+  hatch_time = 0
 )
 }
 \arguments{
 \item{gen}{Integer denoting generation of pokemon}
 
-\item{masuda}{Is the player using masuda method}
+\item{masuda}{Is the player using masuda method. Default is FALSE}
 
-\item{shiny_charm}{Does the player have a shiny charm}
+\item{shiny_charm}{Does the player have a shiny charm. Default is FALSE}
 
-\item{encounter_rate}{Rate of encounter of the pokemon (only for wild encounters)}
+\item{encounter_rate}{Rate of encounter of the pokemon (only for wild encounters). Default is 100\%}
 
-\item{atempt_time}{Time (in seconds) representing average time taken to encounter a pokemon, or soft reset}
+\item{hatch_time}{Time (in seconds) to hatch a single pokemon egg. Default value is 0}
 
-\item{hatch_time}{Time (in seconds) to hatch a single pokemon egg}
-
-\item{verbose}{Controls format of returned probability. Default (True) prints results as statements, False returns a dict.}
+\item{atempt_time}{Time (in seconds) representing average time taken to encounter a pokemon, or soft reset. Default value is 15 seconds per encounter}
 }
 \value{
-Dictionary containing probabilities as keys and number of attempts/hrs values as tuples
+Tibble containing probabilities, number of attempts, and hours
 }
 \description{
 Calculates number of attempts/hrs to encounter/hatch a shiny
+}
+\examples{
+gen = 8
+e_rate = 75
+att = 20
+shiny_hunt(gen = gen, encounter_rate = e_rate, attempt_time = att, shiny_charm = TRUE)
 }
