@@ -16,11 +16,17 @@ boss_completion(rates, base_rate = NULL, attempts = NULL, verbose = TRUE)
 \item{verbose}{Enables printed output}
 }
 \value{
-Returns a numeric vector.
-First element should always converge to 1.0.
-Second element is the expected attempts for the given parameters.
-Third element is passed only when attempts in not NULL. It is the \%prob of completion for given attempts
+Returns a list
+$conv should always converge to 1.0.
+$count is the expected attempts for the given parameters.
+$prob element is passed only when attempts is not NULL. It is the \%prob of completion for given attempts
 }
 \description{
 Boss Completion
+}
+\examples{
+object <- boss_completion(rates = c(7 / 24, 7 / 24, 3 / 24, 2 / 24, 2 / 24, 2 / 24, 1 / 24), base_rate = 1/20, attempts = 673, verbose = FALSE)
+object$prob # gives probability of completion
+object$count # expected completion attempts
+object$conv # optional, check if your solution converged successfully. Should be 1.0
 }

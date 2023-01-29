@@ -66,21 +66,21 @@ dry_calc <- function(p, n, verbose = TRUE, plot = TRUE) {
       py <- append(py, pp)
     }
     df <- data.frame(num_trials = px, prob = py) |>
-      mutate(highlight = ifelse(num_trials == n, TRUE, FALSE))
+      dplyr::mutate(highlight = ifelse(num_trials == n, TRUE, FALSE))
 
     pplot <-
-      ggplot(df, aes(x = num_trials, y = prob, fill = highlight)) +
-      geom_bar(stat = "identity", color = "white") +
+      ggplot2::ggplot(df, ggplot2::aes(x = num_trials, y = prob, fill = highlight)) +
+      ggplot2::geom_bar(stat = "identity", color = "white") +
       ggthemes::scale_fill_tableau() +
-      theme(legend.position = 'none') +
-      annotate(
+      ggplot2::theme(legend.position = 'none') +
+      ggplot2::annotate(
         'text',
         label = round(p1, 2),
         x = n,
         y = p1,
         vjust = -0.3
       ) +
-      labs(x = "Number of Attempts", y = "Probability")
+      ggplot2::labs(x = "Number of Attempts", y = "Probability")
 
     print(pplot)
 

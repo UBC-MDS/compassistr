@@ -4,20 +4,24 @@
 \alias{pts_calc}
 \title{Calculates and returns the list of time required (in ranked order) to achieve target points using the different options provided in input}
 \usage{
-pts_calc(points_attempt, time_attempt, target_points, verbose = TRUE)
+pts_calc(points_attempt, time_attempt, target_points)
 }
 \arguments{
-\item{points_attempt}{list of number of points obtained in each attempt}
+\item{points_attempt}{numeric vector for number of points obtained in each attempt}
 
-\item{time_attempt}{list of time taken (in minutes) for each attempt}
+\item{time_attempt}{numeric vector for time taken (in minutes) for each attempt}
 
-\item{target_points}{number of points targetted to reach}
-
-\item{verbose}{bool Controls format of returned time taken. Default (True) prints results as statements, False returns a list.}
+\item{target_points}{Float / Integer number of points targetted to reach}
 }
 \value{
-list of time required (in ranked order of minutes) to achieve target points using the different options provided in input
+numeric vector for time required (in ranked order of minutes) to achieve target points using the different options provided in input
 }
 \description{
 Calculates and returns the list of time required (in ranked order) to achieve target points using the different options provided in input
+}
+\examples{
+points_attempt = c(100,20,120,150,200,30)
+time_attempt = c(2,3,2,5,6,2)
+target_points = 200
+pts_calc(points_attempt = points_attempt,time_attempt = time_attempt ,target_points = target_points)
 }
