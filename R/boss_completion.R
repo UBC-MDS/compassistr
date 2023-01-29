@@ -5,10 +5,10 @@
 #' @param attempts Number of attempts. Rounds to nearest int, rounds negatives to 0. Enables function to return probability of completion for number of attempts
 #' @param verbose Enables printed output
 #'
-#' @return Returns a numeric vector.
-#' First element should always converge to 1.0.
-#' Second element is the expected attempts for the given parameters.
-#' Third element is passed only when attempts in not NULL. It is the %prob of completion for given attempts
+#' @return Returns a list
+#' $conv should always converge to 1.0.
+#' $count is the expected attempts for the given parameters.
+#' $prob element is passed only when attempts in not NULL. It is the %prob of completion for given attempts
 #' @export
 #'
 #' @examples
