@@ -3,9 +3,9 @@ Title: A completionist assistant tool
 Version: 0.0.0.9000
 Authors@R: 
     c(person("Samson", "Bakos", , "samsonbakos@hotmail.com", role = c("aut", "cre")),
-      person("Waiel", "Tinwala", , "waielonh@gmail.com", role = c("aut", "cre")),
-      person("Marian", "Agyby", , "marian.agyby@yahoo.com", role = c("aut", "cre")),
-      person("Ashwin", "Babu", , "bashwin27@gmail.com", role = c("aut", "cre")))
+      person("Waiel", "Tinwala", , "waielonh@gmail.com", role = c("aut")),
+      person("Marian", "Agyby", , "marian.agyby@yahoo.com", role = c("aut")),
+      person("Ashwin", "Babu", , "bashwin27@gmail.com", role = c("aut")))
 Description: A set of tools to help compute task time/ probabilities for video game completionist tasks.
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -18,5 +18,6 @@ Imports:
     dplyr,
     tibble,
     tidyverse,
+    ggplot2,
     ggthemes,
     combinat
