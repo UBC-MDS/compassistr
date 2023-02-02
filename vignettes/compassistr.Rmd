@@ -41,7 +41,33 @@ library(compassistr)
 
 ## `boss_completion()`
 
-This function focuses on goal setting. Specifically, for challenges with multiple rewards (i.e. a boss that drops multiple
+This function focuses on goal setting. Specifically, for challenges with multiple rewards (i.e. a boss that drops many desirable items) it computes the expected number of completions to get at least one of each reward ('completing' the boss), allowing users to decide if a goal is worth the expected time commitment.
+
+For a full example; Oldschool Runescape has a challenge called the Tombs of Amascut: <https://oldschool.runescape.wiki/w/Tombs_of_Amascut>. There are seven main unique rewards on a drop table: [https://oldschool.runescape.wiki/w/Chest\_(Tombs_of_Amascut)#Opened](https://oldschool.runescape.wiki/w/Chest_(Tombs_of_Amascut)#Opened), with a 100% chance to receive an item when the table is rolled. The probability to roll this drop table depends on the level of challenge completed, but for this calculation we will assume 1/20 (corresponding to 325 raid level, walk the path active).
+
+For a challenge with no drop table mechanic, do not enter a base rate arguments, just the probability of the drops upon completion.
+
+To calculate the number of completions required:
+
+```{r}
+# Enter drop rates and base_rate
+rates <- c(7/24, 7/24, 3/24, 2/24, 2/24, 2/24, 1/24) #ToA droprates
+base <- 1/20 #Probability to recieve an item
+
+boss_completion(rates = rates, base_rate = base, verbose = FALSE)
+
+```
+
+`$count` is the expected number of completions
+
+`$conv` is a converge factor. If this is anything other than 1 and an error is not thrown, please post your use case as an issue on the package repo: <https://github.com/UBC-MDS/compassistr>
+
+This function has additional functionality, acting as a simplified version of the `dry_calc` function. When the `attempts` argument is passed, it calculates the binomial probability of receiving at least one of each item (completing the boss) in the given number of attempts, where `$prob` is the percentage probability.
+
+```{r}
+attempts = 1000
+boss_completion(rates = rates, base_rate = base, attempts = 1000, verbose = FALSE)
+```
 
 ## `dry_calc()`
 
