@@ -41,14 +41,14 @@ There are some tools that perform similar functions to functions in `compassist`
 
 You can install the development version of `compassistr` from Github
 
-``` {r}
+``` {r eval=FALSE}
 # install.packages("devtools")
 devtools::install_github("UBC-MDS/compassistr")
 ```
 
 ## Usage
 
-```{r}
+```{r eval=FALSE}
 library(compassistr)
 ```
 
