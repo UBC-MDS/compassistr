@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 
 A set of tools to help compute task time/ probabilities for video game completionist tasks.
 
-\"Completionism\" is a common goal in video games, referring to the goal of achieving every objective in a game (or individual extraneous side-objectives), as opposed to merely doing enough to win. Common examples include hunting for Shiny Pokemon, the Runescape Collection Log, World of Warcraft Achievement Log, among many others. Completionism is generally an exercise in goal setting, dedication, time-commitment, and efficiency. As an example of the time scales involved, hunting a single shiny Pokemon can takes dozens of hours, completing individual Runescape bosses can take from less than ten to many thousands of hours, and the impossible task of completing the entire collection log is estimated to be more than 500 years of play time. Small optimizations have the potential to save large amounts of time and effort, and as such completionist players are often very efficiency-oriented by necessity.
+"Completionism" is a common goal in video games, referring to the goal of achieving every objective in a game (or individual extraneous side-objectives), as opposed to merely doing enough to win. Common examples include hunting for Shiny Pokemon, the Runescape Collection Log, World of Warcraft Achievement Log, among many others. Completionism is generally an exercise in goal setting, dedication, time-commitment, and efficiency. As an example of the time scales involved, hunting a single shiny Pokemon can takes dozens of hours, completing individual Runescape bosses can take from less than ten to many thousands of hours, and the impossible task of completing the entire collection log is estimated to be more than 500 years of play time. Small optimizations have the potential to save large amounts of time and effort, and as such completionist players are often very efficiency-oriented by necessity.
 
 This package provides tools to help completionist players focus and analyze their goals. These tools compute and visualize expected attempts, play times, and probabilities to help players understand their goals and compare the efficiency of different methods. Current tools are developed with use cases focusing on goals in the games Oldschool Runescape and Pokemon, but the use cases are easily generalized to other applications.
 
@@ -71,9 +71,25 @@ boss_completion(rates = rates, base_rate = base, attempts = 1000, verbose = FALS
 
 ## `dry_calc()`
 
+`dry_calc()` focuses around assessing the probability of at least one event occurring in a specific number of attempts. In the completionist context it is used for cases such as determining the probability of obtaining a specific item from a boss in a given number of attempts based on the bosses drop rate. Players often want to know how lucky/ unlucky they are on a certain goal, such as when obtaining a rare item much quicker than expected, or conversely going far beyond the expected drop rate.
+
+For a full example, the Dragon Warhammer <https://oldschool.runescape.wiki/w/Dragon_warhammer> is an important item in Old School Runescape, obtainable only as a 1/5000 drop from a specific enemy. A streamer named Settled was famously extremely unlucky ("dry") in obtaining this item, obtaining it after 24386 kills.
+
+```{r}
+dry_calc(1/5000, 24836L, verbose = FALSE, plot = FALSE)
+```
+
+Therefore according to `dry_calc` Settled had a 99.3% chance to obtain one in this main kills, meaning only 0.7% of players go equally or more dry.
+
+`dry_calc` can also plot the cumulative binomial CDF to see where on the probability curve the user currently is, and how the probability changes in either direction:
+
+```{r}
+dry_calc(1/5000, 24836L, verbose = FALSE, plot = TRUE)
+```
+
 ## `shiny_hunt()`
 
-## `pts_calc()` 
+## `pts_calc()`
 
 ## 
 
