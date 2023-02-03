@@ -89,8 +89,24 @@ dry_calc(1/5000, 24836L, verbose = FALSE, plot = TRUE)
 
 ## `shiny_hunt()`
 
+`shiny_hunt()` was developed for the specific application of catching shiny Pokemon [https://pokemon.fandom.com/wiki/Shiny_Pokémon](https://pokemon.fandom.com/wiki/Shiny_Pokémon). Because the encounter rate depends on the 'gen' (release series) of the desired Pokemon, the only required input is `gen`
+
+Optional inputs to enhance accuracy include:
+
+`masuda` and `shiny_charm`, Booleans representing specific shiny hunting methods. Default false.
+
+`encounter_rate`: the % probability of encountering the desired Pokemon in the hunting location. i.e. for an area where 30% of encounters are the desired Pokemon, this would be 30. Default is 100% for rate of encountering any shiny (non specific)
+
+`attempt_time` time in seconds per encounter when hunting wild shiny Pokemon. Depends on the hunting region/ user speed, so requires self measurement by the user.
+
+`hatch_time` time in seconds to hatch an egg, specific to breeding shiny methods. Depends on specific Pokemon.
+
+For example for a gen 8 pokemon with a 75% encounter rate in a region, with the user utilizing the Shiny Charm method and getting 3 encounters per minute we expect:
+
+```{r}
+shiny_hunt(gen = 8, encounter_rate = 75, attempt_time = 20, shiny_charm = TRUE)
+```
+
+The output is a range of probability quantiles as a function of both attempts (Pokemon encounters in this case) an hours taken. I.e. the user has a 90% chance to obtain the desired shiny after 29.01 hours.
+
 ## `pts_calc()`
-
-## 
-
-\
