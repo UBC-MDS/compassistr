@@ -100,3 +100,4 @@ library(compassistr)
 ```
 
 See Docs/ Vignettes for usage examples for each individual function
+https://ubc-mds.github.io/compassistr/articles/compassistr.html
