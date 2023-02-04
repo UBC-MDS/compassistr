@@ -3,6 +3,16 @@
 
 # `compassistr`
 
+<!-- badges: start -->
+
+[![R-CMD-check](https://github.com/UBC-MDS/compassistr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/UBC-MDS/compassistr/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
+
+<!-- badges: start -->
+
+[![codecov](https://codecov.io/gh/UBC-MDS/compassistr/branch/main/graph/badge.svg?token=dGNyqkOa7g)](https://codecov.io/gh/UBC-MDS/compassistr)
+<!-- badges: end -->
+
 ## Completionist Assistant
 
 #### Authors/ Main Contributors: Samson Bakos, Marian Agyby, Waiel Tinwala, Ashwin Babu
@@ -10,7 +20,7 @@
 A set of tools to help compute task time/ probabilities for video game
 completionist tasks.
 
-Visit the site here! https://ubc-mds.github.io/compassistr/
+Visit the site here! <https://ubc-mds.github.io/compassistr/>
 
 “Completionism” is a common goal in video games, referring to the goal
 of achieving every objective in a game (or individual extraneous
@@ -36,30 +46,30 @@ applications.
 
 The following functions are currently available:
 
--   `shiny_hunt()`: Designed for hunting Shiny Pokemon. Computes the
-    time to find a specific Shiny Pokemon based on the occurrence rate
-    of that Pokemon in a specific region, and Pokemon generation/game.
+- `shiny_hunt()`: Designed for hunting Shiny Pokemon. Computes the time
+  to find a specific Shiny Pokemon based on the occurrence rate of that
+  Pokemon in a specific region, and Pokemon generation/game.
 
--   `boss_completion():` A weighted permutation probability calculator
-    that computes the expected attempts to complete a task as a function
-    of the probabilities of all desired outcomes (i.e. expected boss
-    kills to get all items based on all item drop rates). Includes
-    optional arguments to also show probability of overall completion/
-    completing each task for a given number of attempts.
+- `boss_completion():` A weighted permutation probability calculator
+  that computes the expected attempts to complete a task as a function
+  of the probabilities of all desired outcomes (i.e. expected boss kills
+  to get all items based on all item drop rates). Includes optional
+  arguments to also show probability of overall completion/ completing
+  each task for a given number of attempts.
 
--   `dry_calc()`: Computes the probability of obtaining at least one of
-    a specific outcome in a given number of trials based on binomial
-    probability (i.e. probability of obtaining an item from a boss in a
-    given number of kills). Displays a plot showing probability of
-    obtaining a drop over a range of trial counts, indicating location
-    of provided trials on this curve.
+- `dry_calc()`: Computes the probability of obtaining at least one of a
+  specific outcome in a given number of trials based on binomial
+  probability (i.e. probability of obtaining an item from a boss in a
+  given number of kills). Displays a plot showing probability of
+  obtaining a drop over a range of trial counts, indicating location of
+  provided trials on this curve.
 
--   `pts_calc()`: Computes the expected play time to obtain a target
-    point level (i.e. price of an item, expected number of points per
-    item drop) as a function of a player’s points per attempt and time
-    per attempt. When passed multiple sets of points/ times, it ranks
-    all of the possible strategies and provides a list of time required
-    (in ranked order least to maximum).
+- `pts_calc()`: Computes the expected play time to obtain a target point
+  level (i.e. price of an item, expected number of points per item drop)
+  as a function of a player’s points per attempt and time per attempt.
+  When passed multiple sets of points/ times, it ranks all of the
+  possible strategies and provides a list of time required (in ranked
+  order least to maximum).
 
 There are some tools that perform similar functions to functions in
 `compassist`. For example, the `giovanni` package
