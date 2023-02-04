@@ -10,6 +10,8 @@
 A set of tools to help compute task time/ probabilities for video game
 completionist tasks.
 
+Visit the site here! https://ubc-mds.github.io/compassistr/
+
 “Completionism” is a common goal in video games, referring to the goal
 of achieving every objective in a game (or individual extraneous
 side-objectives), as opposed to merely doing enough to win. Common
