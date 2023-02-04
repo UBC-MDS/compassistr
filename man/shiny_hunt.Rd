@@ -24,7 +24,7 @@ shiny_hunt(
 
 \item{hatch_time}{Time (in seconds) to hatch a single pokemon egg. Default value is 0}
 
-\item{atempt_time}{Time (in seconds) representing average time taken to encounter a pokemon, or soft reset. Default value is 15 seconds per encounter}
+\item{attempt_time}{Time (in seconds) representing average time taken to encounter a pokemon, or soft reset. Default value is 15 seconds per encounter}
 }
 \value{
 Tibble containing probabilities, number of attempts, and hours
