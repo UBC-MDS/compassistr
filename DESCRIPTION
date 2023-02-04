@@ -24,3 +24,4 @@ Imports:
     ggthemes,
     combinat
 VignetteBuilder: knitr
+URL: https://ubc-mds.github.io/compassistr/
