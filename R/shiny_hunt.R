@@ -4,7 +4,7 @@
 #' @param masuda Is the player using masuda method. Default is FALSE
 #' @param shiny_charm Does the player have a shiny charm. Default is FALSE
 #' @param encounter_rate Rate of encounter of the pokemon (only for wild encounters). Default is 100%
-#' @param atempt_time Time (in seconds) representing average time taken to encounter a pokemon, or soft reset. Default value is 15 seconds per encounter
+#' @param attempt_time Time (in seconds) representing average time taken to encounter a pokemon, or soft reset. Default value is 15 seconds per encounter
 #' @param hatch_time Time (in seconds) to hatch a single pokemon egg. Default value is 0
 #'
 #' @return Tibble containing probabilities, number of attempts, and hours
