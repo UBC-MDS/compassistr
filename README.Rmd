@@ -15,9 +15,13 @@ knitr::opts_chunk$set(
 
 # `compassistr`
 <!-- badges: start -->
-  [![R-CMD-check](https://github.com/UBC-MDS/compassistr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/UBC-MDS/compassistr/actions/workflows/R-CMD-check.yaml)
-[![R-CMD-check](https://github.com/UBC-MDS/compassistr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/UBC-MDS/compassistr/actions/workflows/R-CMD-check.yaml)
+  [![R-CMD-check](https://github.com/UBC-MDS/compassistr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/UBC-MDS/compassistr/actions/workflows/R-CMD-check.yaml) 
 <!-- badges: end -->
+
+<!-- badges: start -->
+[![codecov](https://codecov.io/gh/UBC-MDS/compassistr/branch/main/graph/badge.svg?token=dGNyqkOa7g)](https://codecov.io/gh/UBC-MDS/compassistr)
+<!-- badges: end -->
+
 ## Completionist Assistant
 
 #### Authors/ Main Contributors: Samson Bakos, Marian Agyby, Waiel Tinwala, Ashwin Babu
