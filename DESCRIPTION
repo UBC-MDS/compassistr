@@ -23,6 +23,7 @@ Imports:
     tidyverse,
     ggplot2,
     ggthemes,
-    combinat
+    combinat,
+    devtools
 VignetteBuilder: knitr
 URL: https://ubc-mds.github.io/compassistr/
