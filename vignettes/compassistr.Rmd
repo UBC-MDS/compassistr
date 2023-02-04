@@ -110,3 +110,17 @@ shiny_hunt(gen = 8, encounter_rate = 75, attempt_time = 20, shiny_charm = TRUE)
 The output is a range of probability quantiles as a function of both attempts (Pokemon encounters in this case) an hours taken. I.e. the user has a 90% chance to obtain the desired shiny after 29.01 hours.
 
 ## `pts_calc()`
+
+The `pts_calc` function is designed to compare different strategies, such as cases where the user needs to obtain a certain threshold of points to purchase an item, or a reward is expected at a certain threshold of points.
+
+This can also be generalized for boss kills, rather than points (i.e. different kills/ time for different methods).
+
+The function outputs a ranked list of the methods it is provided, along with the time to completion for each method. Points and times are passed as an ordered numeric vector -- order must be the same for correct results.
+
+For example, in the Chambers of Xeric in Runescape <https://oldschool.runescape.wiki/w/Chambers_of_Xeric>, a player might be able to finish a solo normal mode raid in approximately 30 minutes for around 32,000 points, or a challenge mode raid in 65 minutes for 60,000 points. The player will obtain a unique item approximately every 800,000 points.
+
+```{r}
+pts_calc(points_attempt = c(32000, 60000),time_attempt = c(30, 65) ,target_points = 800000)
+```
+
+We can therefore see that the first method will take 750 minutes to receive an item, and the second will take 867 minutes.
